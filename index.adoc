@@ -1,0 +1,54 @@
+---
+layout: default
+title: "tpo42 Framework"
+---
+
+= tpo42 Framework
+:page-layout: default
+:!toc:
+:sectanchors:
+:sectlinks:
+
+[.hero]
+Das *tpo42 Framework* verwendet die bewährten Templates link:https://req42.de/[req42] und link:https://arc42.org/[arc42], verbindet sie unter der Haube und erlaubt so einem Technical Product Owner die effiziente Pflege von Anforderungs- und technischer Dokumentation ohne Dopplungen. Solide, praktisch und pragmatisch. Open Source und Open Development.
+
+[.cta-buttons]
+--
+link:overview.html[Framework entdecken,role="btn btn-primary"]
+link:https://github.com/tpo42/tpo42-templates[GitHub Repository,role="btn btn-secondary"]
+--
+
+== Was ist tpo42?
+
+Der *Technical Product Owner* steht vor einer einzigartigen Herausforderung:
+
+* ✅ **Produktvision** in konkrete Requirements übersetzen
+* ✅ **Technische Architektur** mit Business-Zielen abstimmen
+* ✅ **Stakeholder** aus verschiedenen Domänen koordinieren
+* ✅ **Dokumentation** die beide Welten verbindet
+
+Deshalb baut tpo42 die Brücke zwischen Produktvision und Produktarchitektur
+
+== Community & Support
+
+//* 📚 **Dokumentation:** link:https://docs.tpo42.org[docs.tpo42.org]
+* image:assets/images/github-mark.svg[GitHub,16,16,role="icon"] **GitHub:** link:https://github.com/tpo42/tpo42-templates[GitHub Repository]
+* image:assets/images/email-icon.svg[Email,16,16,role="icon"] **Kontakt:** info@tpo42.de
+
+== Lizenz & Referenzen
+
+Das tpo42 Framework steht unter der **Creative Commons Attribution-ShareAlike 4.0 International License** und verwendet die bewährten Frameworks:
+
+* link:https://req42.de/[req42] - Requirements Engineering (Dr. Peter Hruschka, Markus Meuten)
+* link:https://arc42.org/[arc42] - Architecture Documentation (Dr. Peter Hruschka, Dr. Gernot Starke)
+
+[.license-note]
+****
+**Creative Commons Lizenz:** Sie dürfen das Material teilen, bearbeiten und kommerziell nutzen, solange Sie angemessene Urheber- und Rechteangaben machen und Ihre Beiträge unter derselben Lizenz verbreiten.
+
+Ihre eigenen Inhalte, die in tpo42-Templates eingebettet sind, können Sie nach Ihren eigenen Regeln verwenden und veröffentlichen.
+****
+
+---
+
+*Von Technical Product Ownern, für Technical Product Owner.* 🎯

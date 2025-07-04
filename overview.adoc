@@ -1,0 +1,129 @@
+---
+layout: default
+title: "TPO42 Framework"
+---
+
+= Über tpo42
+:page-layout: default
+:!toc:
+:sectanchors:
+:sectlinks:
+
+[.hero]
+tpo42 entstand aus der praktischen Notwendigkeit heraus, die Lücke zwischen **Product Management** und **Software Architecture** zu schließen.
+
+Während ein arc42 Dokument die Frage:
+
+* _**Was** sollen wir über unsere Architektur kommunizieren/dokumentieren?_
+
+und ein req42 Dokument die Frage:
+
+* _**Warum** sollen wir uns über unser Produkt Gedanken machen?_
+
+getrennt beantwortet, verbindet tpo42 die Fragen und benutzt das _**Wie** sollen wir kommunizieren/dokumentieren?_ weiter.
+
+== Struktur
+
+Die einfachen Templates von arc42 und req42 bleiben erhalten. Dieses Template unterstellt, dass man sich zuerst Gedanken um das _**Warum**_ macht, weswegen arc42-Kapitel im Zweifel Inhalte aus req42-Kapiteln einschließen.
+
+Als **Technical Product Owner** verbringt man weniger Zeit im Backlog - diese Aufgabe teilt man sich mit dem "hohen Projektmanagement", dass die gesamte Produkt-Vision verantwortet. Dafür ist der Brückenschlag zur Architektur wichtiger. Das bedeutet. die Kapitel:
+
+* Scope-Abgrenzung
+* Qualitätsanforderungen
+* Modelle zur Unterstützung
+
+werden wichtiger, Kapitel wie
+
+* Stakeholder
+* Randbedingungen
+* Produkt-Backlog
+
+erhalten einen zu dem blauen einen roten Aspekt{empty}footnote:[Vergleiche https://req42.de/req42-im-ueberblick#ergebnisorientiert--nicht-prozessorientiert[req42 im Überblick > Ergebnisorientiert – nicht prozessorientiert]].
+
+== Redundanzen im Überblick
+
+[plantuml,images/req42-arc42-redundancy,png]
+----
+@startuml
+!theme plain
+skinparam backgroundColor white
+skinparam defaultFontSize 10
+skinparam packageStyle rectangle
+
+package "req42" as req42 {
+  rectangle "1. Business Goals" as req42_01 #ff4500
+  rectangle "2. Stakeholder" as req42_02 #00bfff|ff4500
+  rectangle "3. Scope" as req42_03 #00bfff
+  rectangle "4. Product Backlog" as req42_04 #00bfff|ff4500
+  rectangle "5. Supporting Models" as req42_05 #00bfff
+  rectangle "6. Quality Goals" as req42_06 #00bfff
+  rectangle "7. Constraints" as req42_07 #00bfff|ff4500
+  rectangle "8. Domain Terminology" as req42_08 #00bfff
+  rectangle "9. Assets" as req42_09 #00bfff
+  rectangle "10. Teams" as req42_10 #ff4500
+  rectangle "11. Roadmap" as req42_11 #ff4500
+  rectangle "12. Risks & Assumptions" as req42_12 #ff4500
+}
+
+package "arc42" as arc42 {
+  rectangle "1. Introduction & Goals" as arc42_01 #00bfff|ff4500
+  rectangle "2. Architecture Constraints" as arc42_02 #00bfff|ff4500
+  rectangle "3. Context & Scope" as arc42_03 #00bfff
+  rectangle "4. Solution Strategy" as arc42_04 #7cfc00
+  rectangle "5. Building Blocks" as arc42_05 #7cfc00
+  rectangle "6. Runtime View" as arc42_06 #7cfc00
+  rectangle "7. Deployment View" as arc42_07 #7cfc00
+  rectangle "8. Cross Cutting Concepts" as arc42_08 #7cfc00
+  rectangle "9. Architecture Decisions" as arc42_09 #00bfff
+  rectangle "10. Quality Requirements" as arc42_10 #00bfff
+  rectangle "11. Technical Risks" as arc42_11 #ff4500
+  rectangle "12. Glossary" as arc42_12 #7cfc00
+}
+
+' Layout hints
+req42_01 -[hidden]down- req42_02
+req42_02 -[hidden]down- req42_03
+req42_03 -[hidden]down- req42_04
+req42_04 -[hidden]down- req42_05
+req42_05 -[hidden]down- req42_06
+req42_06 -[hidden]down- req42_07
+req42_07 -[hidden]down- req42_08
+req42_08 -[hidden]down- req42_09
+req42_09 -[hidden]down- req42_10
+req42_10 -[hidden]down- req42_11
+req42_11 -[hidden]down- req42_12
+
+arc42_01 -[hidden]down- arc42_02
+arc42_02 -[hidden]down- arc42_03
+arc42_03 -[hidden]down- arc42_04
+arc42_04 -[hidden]down- arc42_05
+arc42_05 -[hidden]down- arc42_06
+arc42_06 -[hidden]down- arc42_07
+arc42_07 -[hidden]down- arc42_08
+arc42_08 -[hidden]down- arc42_09
+arc42_09 -[hidden]down- arc42_10
+arc42_10 -[hidden]down- arc42_11
+arc42_11 -[hidden]down- arc42_12
+
+req42_01 -[hidden]left- arc42_01
+req42_02 -[hidden]left- arc42_02
+req42_03 -[hidden]left- arc42_03
+req42_04 -[hidden]left- arc42_04
+req42_05 -[hidden]left- arc42_05
+req42_06 -[hidden]left- arc42_06
+req42_07 -[hidden]left- arc42_07
+req42_08 -[hidden]left- arc42_08
+req42_09 -[hidden]left- arc42_09
+
+' Mappings/Redundanzen
+req42_01 -right-> arc42_01 : Vision
+req42_02 -right-> arc42_01 : Stakeholder
+req42_03 -right-> arc42_03 : Scope
+req42_06 -right-> arc42_01 : Quality Goals
+req42_06 -right-> arc42_10 : Quality Goals
+req42_07 -right-> arc42_02 : Constraints
+req42_12 -right-> arc42_11 : Risks
+arc42_12 -left-> req42_08 : Terms
+
+@enduml
+----

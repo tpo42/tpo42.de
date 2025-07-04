@@ -1,0 +1,74 @@
+# Site settings
+title: "TPO42 Framework"
+description: "Technical Product Owner Framework combining req42 and arc42"
+url: "https://www.tpo42.de"
+baseurl: ""
+
+# Language
+lang: de
+locale: de_DE
+
+# AsciiDoc Configuration
+asciidoc:
+  processor: asciidoctor
+  ext: adoc
+
+asciidoctor:
+  base_dir: :docdir
+  safe: unsafe
+  require_libs:
+    - asciidoctor-diagram
+  attributes:
+    - hardbreaks!
+    - sectanchors
+    - sectlinks
+    - sectnums
+    - source-highlighter=rouge
+    - icons=font
+    - experimental=true
+
+# Bildordner vor Jekyll-Bereinigung schützen
+keep_files: [images]
+
+# Plugins
+plugins:
+  - asciidoctor-diagram
+  - jekyll-asciidoc
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Theme
+theme: minima
+
+# Collections (für später)
+collections:
+  examples:
+    output: true
+    permalink: /:collection/:name/
+
+# Navigation
+header_pages:
+  - overview.adoc
+  - getting-started.adoc
+
+# Social
+github_username: tpo42
+linkedin_username: jens-rehsack
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/

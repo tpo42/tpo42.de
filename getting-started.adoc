@@ -1,0 +1,45 @@
+---
+layout: default
+title: "Getting Started"
+---
+
+= Getting Started mit TPO42
+:page-layout: default
+:!toc:
+:sectanchors:
+:sectlinks:
+
+[.hero]
+Das tpo42-Template ist in einem frühen Work-In-Progress Stadium. Als allererste Zielgruppe peilen wir Hands-On Technical Product Owner an, die das **Documentation as Code** Paradigma genauso lieben, wie wir. GitOps ist der Weg.
+
+== Voraussetzungen
+
+* Git
+* Docker für docToolchain im Docker-Container
+* link:https://pre-commit.com/[pre-commit] (dringend empfohlen)
+* Text Editor mit AsciiDoc Support:
+  - VS Code mit AsciiDoc Extension
+  - AsciidocFX
+  - Vim/Neovim mit entsprechenden Plugins
+* Grundkenntnisse in req42 und arc42
+
+**Docker-first Approach:** Wir empfehlen ausschließlich die Verwendung von docToolchain im Docker-Container. Andere Installationsmethoden (lokale Java/Gradle-Installation) sind für erfahrene Nutzer gedacht, die wissen, was sie tun.
+
+**docToolchain Wrapper:** Verwenden Sie das offizielle Wrapper-Skript aus dem docToolchain-Repository für die beste Erfahrung.
+
+**pre-commit Integration:** Automatisierte Checks für Code- und Commit-Qualität sind essentiell für ein sauberes Documentation-as-Code-Setup.
+
+== Quick Start
+
+Detaillierte Anweisungen finden Sie in unserem link:https://github.com/tpo42/tpo42-templates/blob/main/README.adoc[GitHub README].
+
+[source,bash]
+----
+git clone https://github.com/tpo42/tpo42-templates.git
+cd tpo42-templates
+# Folgen Sie den Anweisungen im README.adoc
+----
+
+---
+
+_Für Technical Product Owner, die Documentation as Code lieben._ 🎯

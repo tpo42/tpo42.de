@@ -1,0 +1,293 @@
+---
+layout: default
+title: "Über TPO42"
+---
+
+= Über TPO42
+:page-layout: default
+:!toc: left
+:sectanchors:
+:sectlinks:
+
+== Vision
+
+TPO42 entstand aus der praktischen Notwendigkeit heraus, die Lücke zwischen **Product Management** und **Software Architecture** zu schließen. Als Technical Product Owner stehen Sie täglich vor der Herausforderung, Business-Anforderungen in technische Entscheidungen zu übersetzen - und dabei beiden Welten gerecht zu werden.
+
+[.highlight-box]
+****
+*"Ein Technical Product Owner ist sowohl Übersetzer als auch Brückenbauer zwischen Produktvision und technischer Realität."*
+****
+
+== Das Problem
+
+=== Getrennte Welten
+
+**Product Management Tools** fokussieren auf:
+* User Stories und Features
+* Business Value und ROI
+* Market Requirements
+* Stakeholder Communication
+
+**Architecture Documentation** behandelt:
+* Technical Decisions
+* System Structure
+* Quality Attributes
+* Implementation Details
+
+=== Die Lücke
+
+Zwischen beiden Welten klafft eine **Dokumentations- und Kommunikationslücke**:
+
+* ❌ Requirements werden losgelöst von Architecture erstellt
+* ❌ Technische Entscheidungen fehlt Business-Kontext
+* ❌ Stakeholder sprechen verschiedene "Sprachen"
+* ❌ Traceability zwischen Anforderungen und Architektur fehlt
+
+== Die TPO42 Lösung
+
+=== Integration statt Separation
+
+TPO42 **verbindet** req42 und arc42 **unter der Haube**:
+
+[source,asciidoc]
+----
+// In req42 Business Goals
+//tag::vision[]
+=== Vision
+Unser E-Commerce System soll 10x mehr Transaktionen verarbeiten können.
+//end::vision[]
+
+// In arc42 Introduction
+include::../req42-chapters/01_business-goals.adoc[tag=vision]
+----
+
+=== Single Source of Truth
+
+**Ein Framework, eine Wahrheit:**
+* Business Goals werden zu Architecture Drivers
+* Quality Requirements werden zu Architecture Constraints
+* Stakeholder Concerns werden zu Cross-cutting Concepts
+* Domain Model wird zur Architecture Vocabulary
+
+=== Documentation as Code
+
+```bash
+# Ein Command, alle Perspektiven
+dtcw docker generatePDF
+
+# Generiert:
+├── req42-documentation.pdf    # Product Perspective
+├── arc42-documentation.pdf    # Technical Perspective
+└── tpo42-integration.pdf      # Integrated View
+```
+
+== Framework-Architektur
+
+=== Kern-Komponenten
+
+[ditaa,images/architecture-overview]
+....
+    +----------------+    Integration   +----------------+
+    |                |    Templates     |                |
+    |     req42      |<---------------->|     arc42      |
+    |  Requirements  |                  | Architecture   |
+    |                |                  |                |
+    +-------+--------+                  +--------+-------+
+            |                                    |
+            |             TPO42                  |
+            |         Integration                |
+            +---------------+--------------------+
+                            |
+                            v
+                    +----------------+
+                    |                |
+                    | Documentation  |
+                    |   Generation   |
+                    |                |
+                    +----------------+
+....
+
+=== Tagged Sections
+
+**req42 Business Goals:**
+```asciidoc
+//tag::performance[]
+Das System muss 1000 parallele Benutzer unterstützen.
+//end::performance[]
+```
+
+**arc42 Quality Requirements:**
+```asciidoc
+include::../req42-chapters/02_constraints.adoc[tag=performance]
+
+Daraus folgt eine Load Balancer Architektur...
+```
+
+== Zielgruppen im Detail
+
+=== Technical Product Owner
+
+**Profil:**
+* Product Owner mit technischem Background
+* Oder Software Architect mit Product-Fokus
+* Vermittelt zwischen Business und Engineering
+* Verantwortlich für Product + Technical Roadmap
+
+**Nutzen von TPO42:**
+* ✅ **Integrierte Dokumentation** - Ein Framework für beide Welten
+* ✅ **Stakeholder Alignment** - Gemeinsame Sprache für alle
+* ✅ **Traceability** - Von Business Goal zur Technical Decision
+* ✅ **Effizienz** - Weniger Redundanz, mehr Fokus
+
+=== Software Architects
+
+**Herausforderung:**
+* Architecture Decisions ohne Business-Kontext
+* Schwierige Stakeholder-Kommunikation
+* Missing Link zu Product Strategy
+
+**TPO42 Benefits:**
+* 🎯 **Business Context** für jede Technical Decision
+* 📊 **Stakeholder Mapping** für Architecture Concerns
+* 🔄 **Bidirektionale Traceability** Requirements ↔ Architecture
+
+=== Senior Product Managers
+
+**Problem:**
+* Technische Entscheidungen sind "Black Box"
+* Schwierige Priorisierung bei Technical Debt
+* Unklare Impact-Bewertung von Technical Stories
+
+**TPO42 Lösung:**
+* 🔍 **Technische Transparenz** durch integrierte Dokumentation
+* ⚖️ **Bessere Priorisierung** durch Business-Tech-Verbindung
+* 📈 **Impact Assessment** für alle Entscheidungen
+
+=== Development Teams
+
+**Situation:**
+* Requirements und Architecture oft inkonsistent
+* Unklare Business-Motivation für Technical Tasks
+* Schwierige Stakeholder-Kommunikation
+
+**Mit TPO42:**
+* 📋 **Konsistente Dokumentation** - Requirements + Architecture
+* 💡 **Business Context** für jeden Technical Task
+* 🗣️ **Klare Communication** mit allen Stakeholdern
+
+== Erfolgsgeschichten
+
+=== Fintech Startup
+
+**Situation:** Rapid Growth, Technical Debt, Compliance Requirements
+
+**Herausforderung:**
+* Product Team wollte Features
+* Engineering Team wollte Refactoring
+* Compliance wollte Documentation
+
+**TPO42 Impact:**
+* ✅ Integrierte Compliance-Dokumentation
+* ✅ Business Case für Technical Debt Reduction
+* ✅ Accelerated Feature Development durch bessere Architecture
+
+=== Enterprise E-Commerce
+
+**Situation:** Legacy System Migration, Multiple Stakeholder
+
+**Problem:**
+* 15+ Stakeholder mit verschiedenen Concerns
+* Komplexe Legacy-Integration Requirements
+* Architecture Decisions mit Business Impact
+
+**Results mit TPO42:**
+* 🎯 **Stakeholder Alignment** durch gemeinsame Dokumentation
+* 📊 **Risk Assessment** mit Business + Technical Perspective
+* ⚡ **Faster Decision Making** durch integrierte Views
+
+== Philosophie
+
+=== Documentation as Code
+
+TPO42 folgt konsequent dem **Documentation as Code** Prinzip:
+
+* 📝 **AsciiDoc** als Single Source of Truth
+* 🔄 **Git Workflow** für alle Änderungen
+* 🤖 **Automated Generation** für verschiedene Audiences
+* 🔗 **Living Documentation** die mit Code mitentwickelt wird
+
+=== Single Source of Truth
+
+**Kein Copy-Paste zwischen Dokumenten:**
+```asciidoc
+// Definition einmal in req42
+//tag::user-types[]
+Wir unterscheiden Premium- und Standard-Kunden.
+//end::user-types[]
+
+// Verwendung in arc42
+include::../req42/stakeholders.adoc[tag=user-types]
+```
+
+=== Stakeholder-Driven
+
+**Jeder Stakeholder bekommt seine Sicht:**
+* **Product Managers:** req42 Business View
+* **Architects:** arc42 Technical View
+* **C-Level:** Executive Summary mit beiden Perspektiven
+* **Developers:** Integrated Implementation Guide
+
+== Community
+
+=== Open Source
+
+TPO42 steht unter **Creative Commons** Lizenz:
+* ✅ **Frei verwendbar** für kommerzielle Projekte
+* ✅ **Anpassbar** für Ihre Organisation
+* ✅ **Community-driven** Development
+
+=== Contributions Welcome
+
+**Wie Sie beitragen können:**
+* 🐛 **Issues** - Bugs und Feature Requests
+* 📝 **Templates** - Neue Integration Patterns
+* 📖 **Examples** - Praxisbeispiele aus Ihren Projekten
+* 💬 **Discussions** - Best Practices und Lessons Learned
+
+=== Roadmap
+
+**Geplante Features:**
+* 🔄 **Automated Sync** zwischen req42 und arc42 Sections
+* 📊 **Metrics Integration** für Business + Technical KPIs
+* 🎨 **Visual Tools** für Stakeholder Workshops
+* 🤖 **AI-Assisted** Content Generation
+
+== Credits
+
+TPO42 wäre nicht möglich ohne die exzellenten Grundlagen:
+
+[cols="1,1,2",options="header"]
+|===
+|Framework |Autoren |Beitrag zu TPO42
+
+|req42
+|Dr. Peter Hruschka, Markus Meuten
+|Requirements Engineering Methodology
+
+|arc42
+|Dr. Peter Hruschka, Dr. Gernot Starke
+|Architecture Documentation Template
+
+|docToolchain
+|Gernot Starke, Ralf D. Müller
+|Documentation Generation Pipeline
+|===
+
+[.thank-you]
+****
+**Vielen Dank** an die req42 und arc42 Communities für die Inspiration und die solide Grundlage, auf der TPO42 aufbaut!
+****
+
+---
+
+_Haben Sie Fragen oder möchten Sie TPO42 in Ihrem Projekt einsetzen? Kontaktieren Sie uns gerne!_

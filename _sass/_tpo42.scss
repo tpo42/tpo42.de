@@ -1,0 +1,304 @@
+// TPO42 Theme Colors
+$tpo42-primary: #2E7D84;
+$tpo42-secondary: #4A9B9E;
+$tpo42-accent: #6BB6B8;
+$tpo42-red: #C5504B;
+$tpo42-dark: #1a5f66;
+
+// Neue Accessibility-Farben
+$tpo42-link-light: #FFE066; // Helles Gelb für Links auf dunklem Grund
+$tpo42-link-hover: #FFF3B3; // Hellere Version für Hover
+
+// Hero Section - KOMPLETT ÜBERARBEITET
+.hero {
+  background: linear-gradient(135deg, $tpo42-primary 0%, $tpo42-accent 100%);
+  color: white;
+  padding: 3rem 2rem;
+  margin: -2rem -2rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    // Bessere Lesbarkeit
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    line-height: 1.6; // Bessere Lesbarkeit
+  }
+
+  // KRITISCH: Links im Hero-Bereich sichtbar machen
+  a:not(.btn) {
+    color: $tpo42-link-light !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px !important;
+    font-weight: 600 !important;
+
+    &:hover, &:focus {
+      color: $tpo42-link-hover !important;
+      text-decoration: none !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      // Accessibility: Focus Ring
+      outline: 2px solid $tpo42-link-hover;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
+  // Buttons sollen normal bleiben
+  .btn {
+    color: white !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+
+    &:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// CTA Buttons - Verbessert
+.cta-buttons {
+  text-align: center;
+  margin: 2rem 0;
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    // Accessibility
+    min-height: 44px; // Touch-Target Mindestgröße
+
+    &:focus {
+      outline: 2px solid $tpo42-primary;
+      outline-offset: 2px;
+    }
+
+    &.btn-primary {
+      background: $tpo42-primary;
+      color: white;
+      border: 2px solid $tpo42-primary;
+
+      &:hover {
+        background: $tpo42-dark;
+        border-color: $tpo42-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &.btn-secondary {
+      background: transparent;
+      color: $tpo42-primary;
+      border: 2px solid $tpo42-primary;
+
+      &:hover {
+        background: $tpo42-primary;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}
+
+// Universal Icon Styling - VOLLSTÄNDIG
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  margin-right: 0.25em;
+
+  // WICHTIG: Baseline-Alignment für bessere Positionierung
+  // Icon Alignment - FIXED
+  vertical-align: -0.125em; // Leicht nach unten für optische Mitte
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  display: block; // Entfernt unerwünschte Baseline-Gaps
+}
+
+// Spezifische Icon-Anpassungen
+.contact-list .icon {
+  vertical-align: -0.1em; // E-Mail-Icon Anpassung
+}
+
+.social-media-list .icon {
+  vertical-align: -0.125em; // Social Media Icons
+  margin-right: 0.4em; // Etwas mehr Abstand für bessere Lesbarkeit
+}
+
+.site-nav .page-link .icon {
+  vertical-align: -0.1em; // Navigation Icons
+  margin-right: 0.3em;
+}
+
+// Hover-Effekte für Icons
+.social-media-list a:hover .icon svg {
+  fill: #0366d6; // GitHub blue
+  transition: fill 0.2s ease;
+}
+
+// LinkedIn-spezifischer Hover (LinkedIn-Blau)
+.social-media-list a[href*="linkedin"]:hover .icon svg {
+  fill: #0077B5; // LinkedIn blue
+}
+
+// E-Mail Hover
+.contact-list a[href^="mailto"]:hover .icon svg {
+  fill: #ea4335; // Gmail red
+}
+
+// Problem-Solution Box - Accessibility verbessert
+.problem-solution {
+  background: linear-gradient(45deg, #f8f9fa 0%, #e9ecef 100%);
+  border-left: 4px solid $tpo42-primary;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+
+  strong {
+    color: $tpo42-primary;
+  }
+
+  // Links in Problem-Solution Boxen
+  a {
+    color: $tpo42-dark !important;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+      color: $tpo42-red !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// License Note Box
+.license-note {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+
+  strong {
+    color: $tpo42-primary;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Links in License Box
+  a {
+    color: $tpo42-primary !important;
+
+    &:hover, &:focus {
+      color: $tpo42-dark !important;
+    }
+  }
+}
+
+// Table Styling
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+
+  th, td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  th {
+    background: $tpo42-primary;
+    color: white;
+    font-weight: 500;
+  }
+
+  tr:nth-child(even) {
+    background: #f8f9fa;
+  }
+}
+
+// Globale Link-Verbesserungen
+a {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+
+  &:focus {
+    outline: 2px solid $tpo42-primary;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+// Responsive Verbesserungen
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    margin: -1rem -1rem 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    // Links auf Mobile noch deutlicher
+    a:not(.btn) {
+      text-decoration-thickness: 3px !important;
+      text-underline-offset: 4px !important;
+    }
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+  }
+}
+
+// High Contrast Mode
+@media (prefers-contrast: high) {
+  .hero a:not(.btn) {
+    color: #FFFF00 !important; // Maximaler Kontrast
+    text-shadow: 1px 1px 0 #000 !important;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0 2px;
+  }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none !important;
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+}

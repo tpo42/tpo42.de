@@ -1,0 +1,10 @@
+.*.sw?
+*.bak
+*~
+build/
+.gradle/
+.vscode/
+*.pdf
+*.hehe
+*.lock
+_site/
