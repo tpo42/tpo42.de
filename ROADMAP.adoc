@@ -1,0 +1,75 @@
+= tpo42.de Roadmap
+:toc:
+:toc-placement: preamble
+
+Roadmap für die Weiterentwicklung von https://www.tpo42.de[www.tpo42.de].
+
+== Status Quo
+
+=== Erledigt (Per, Dezember 2024)
+
+* [x] CC-Lizenz verlinkt
+* [x] Farb-Bugs gesucht und behoben
+* [x] Bilder im `assets/`-Folder für zukünftige Unterseiten
+* [x] Setup auf AsciiDoc umgestellt (lokal Docker-Build + GitHub Actions)
+* [x] Bisherige Seiten auf AsciiDoc migriert (+ HTML wo fürs Design nötig)
+
+Draft-Version: https://tpo42-de-pswd-draft.github.io/
+
+== Offene Punkte
+
+=== "Hinter tpo42" - Contributor-Galerie
+
+* [ ] Galerie der Contributoren auf der Startseite
+
+Für jeden Contributor (der dies möchte):
+
+* [ ] Eigene Seite unter `<name>.tpo42.de`
+* [ ] Umfang: ca. DIN-A4 Seite
+* [ ] Inhalt: Wie kam die Person zum Projekt?
+* [ ] Links zu Homepage, Socials, etc.
+
+NOTE: Per entscheidet selbst, ob er sich als Contributor sieht oder rausnimmt.
+
+=== Examples-Gallery
+
+Kandidaten für die Ressourcen-Seite:
+
+* [ ] prd-flash
+* [ ] tpo42 selbst
+* [ ] ...
+
+=== Subdomains
+
+Früh live nehmen (auch wenn initial leer):
+
+* [ ] `blog.tpo42.de` - dann kann Content in ng-Branches vorbereitet werden
+* [ ] `docs.tpo42.de` - dito
+
+=== Workflow
+
+* [ ] Per erstellt PR gegen dieses Repository (oder liefert Source für PR)
+* [ ] Code-Review im PR ermöglichen
+* [ ] Pipeline (GitHub Actions) validieren und verstehen
+
+=== Optik
+
+* [ ] Optischen Punkt korrigieren (Details folgen nach PR)
+
+== Merge-Kriterium
+
+Per & Jens sind d'accord.
+
+== Nächste Schritte
+
+. PR von Per reviewen
+. Platzhalter befüllen (Contributor-Galerie, Examples)
+. Subdomains (blog, docs) mit Pipeline live nehmen
+. Aktuelle Version live schalten
+. Iterativ weiterentwickeln
+
+== Später
+
+* Projektplan-Tool evaluieren (nicht Jira/Trello/GitLab/Planner)
+* Content für Blog vorbereiten
+* Dokumentation erweitern
