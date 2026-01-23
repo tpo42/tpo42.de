@@ -1,0 +1,75 @@
+---
+layout: page
+title: "Ressourcen"
+permalink: /resources
+excerpt: "Beispiele, Dokumentation und weitere Links"
+header:
+  overlay_image: /assets/images/resources.webp
+  overlay_filter: rgba(0, 0, 0, 0.5)
+  actions:
+    - label: "Zu den Docs"
+      url: "https://www.docs.tpo42.de"
+      blank: true
+    - label: "Blog lesen"
+      url: "https://www.blog.tpo42.de"
+      blank: true
+---
+
+++++
+<div data-aos="fade-up">
+  <h1 id="beispiele">Beispiele</h1>
+
+  <figure class="third">
+    <a href="/assets/images/canvas.webp">
+      <img src="/assets/images/canvas.webp" alt="placeholder image 1" />
+    </a>
+    <a href="/assets/images/canvas.webp">
+      <img src="/assets/images/canvas.webp" alt="placeholder image 2" />
+    </a>
+    <a href="/assets/images/canvas.webp">
+      <img src="/assets/images/canvas.webp" alt="placeholder image 3" />
+    </a>
+  </figure>
+</div>
+
+<hr class="section-sep" />
+
+<h1 id="weitere-links">Weitere Links</h1>
+
+<div class="box-container">
+
+  <div class="box box--info box-half" data-aos="zoom-in">
+    <h3 id="dokumentation">Dokumentation</h3>
+    <p>Ausführliche Dokumentation des tpo42 Frameworks.</p>
+    <p>
+      <a href="#" class="btn btn--info" target="_blank" rel="noopener noreferrer nofollow">
+        Lesen
+      </a>
+    </p>
+  </div>
+
+  <div class="box box--success box-half" data-aos="zoom-in">
+    <h3 id="blog">Blog</h3>
+    <p>Aktuelle Artikel und Neuigkeiten rund um tpo42.</p>
+    <p>
+      <a href="#" class="btn btn--success" target="_blank" rel="noopener noreferrer nofollow">
+        Besuchen
+      </a>
+    </p>
+  </div>
+
+  <div class="box box--warning box-half" data-aos="zoom-in">
+    <h3 id="github">GitHub</h3>
+    <p>Der Quellcode und die Templates des tpo42 Frameworks.</p>
+    <p>
+      <a href="https://github.com/TPO42/TPO42-templates"
+         target="_blank"
+         rel="noopener noreferrer nofollow"
+         class="btn btn--warning">
+        Ansehen
+      </a>
+    </p>
+  </div>
+
+</div>
+++++

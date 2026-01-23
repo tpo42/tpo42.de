@@ -1,0 +1,122 @@
+---
+title: "Effiziente Dokumentation für Technical Product Owner"
+layout: page
+permalink: /
+
+header:
+  overlay_image: /assets/images/home.webp
+  overlay_filter: rgba(0, 0, 0, 0.5)
+  actions:
+    - label: "Framework entdecken"
+      url: "/tpo42-framework"
+    - label: "Getting Started"
+      url: "/getting-started"
+excerpt: "Das tpo<span class='red'>42</span> Framework verwendet die bewährten Templates <a href='https://req42.de/' target='_blank' rel='noopener noreferrer nofollow' class='excerpt-link'>req42</a> und <a href='https://arc42.de/' target='_blank' rel='noopener noreferrer nofollow' class='excerpt-link'>arc42</a>, verbindet sie unter der Haube und erlaubt so einem Technical Product Owner die effiziente Pflege von Anforderungs- und technischer Dokumentation ohne Dopplungen. Solide, praktisch und pragmatisch. Open Source und Open Development."
+---
+
+++++
+<div data-aos="fade-up">
+++++
+
+== Was ist tpo42?
+
+Der **Technical Product Owner** steht vor einer einzigartigen Herausforderung:
+
+* ✅ **Produktvision** in konkrete Requirements übersetzen
+* ✅ **Technische Architektur** mit Business-Zielen abstimmen
+* ✅ **Stakeholder** aus verschiedenen Domänen koordinieren
+* ✅ **Dokumentation** die beide Welten verbindet
+
+Deshalb baut *tpo42* die Brücke zwischen Produktvision und Produktarchitektur.
+
+++++
+</div>
+++++
+
+++++
+<div data-aos="fade-right">
+
+<div class="round-image-container">
+  <div class="round-image-box round-image-box-third">
+    <div class="round-image"><img src="/assets/images/solid.png"></div>
+    <h3>Solide</h3>
+  </div>
+
+  <div class="round-image-box round-image-box-third">
+    <div class="round-image"><img src="/assets/images/pragmatic.png"></div>
+    <h3>Pragmatisch</h3>
+  </div>
+
+  <div class="round-image-box round-image-box-third">
+    <div class="round-image"><img src="/assets/images/opensource.png"></div>
+    <h3>Open Source</h3>
+  </div>
+</div>
+
+</div>
+++++
+
+++++
+<hr class="section-sep">
+++++
+
+++++
+<div data-aos="fade-left">
+
+<h2 id="community--support">Community &amp; Support</h2>
+
+<div class="box-container">
+
+  <div class="box box--primary box-half">
+    <h3 id="github">GitHub</h3>
+    <p>Das GitHub Repository mit allen Templates und dem Quellcode.</p>
+    <p>
+      <a href="https://github.com/tpo42/tpo42-templates"
+         class="btn btn--primary"
+         target="_blank"
+         rel="noopener noreferrer nofollow">
+         Zum Repository
+      </a>
+    </p>
+  </div>
+
+  <div class="box box--primary box-half">
+    <h3 id="kontakt">Kontakt</h3>
+    <p>Bei Fragen oder für Support, schreiben Sie eine E-Mail.</p>
+    <p>
+      <a href="mailto:info@tpo42.de" class="btn btn--primary">
+        info@tpo42.de
+      </a>
+    </p>
+  </div>
+
+</div>
+</div>
+++++
+
+++++
+<hr class="section-sep">
+++++
+
+++++
+<div data-aos="fade-up">
+
+<div class="itr-container">
+  <div class="itr-image-container">
+    <img src="/assets/images/header.webp"
+         alt="alternative text for the image"
+         class="itr-image"
+         style="width:400px">
+  </div>
+
+  <div class="itr-text">
+    <h3>Hinter tpo42</h3>
+    <p>
+      Platzhalter: Optionale kurze Vorstellung von dir/Jens,
+      muss natürlich nicht, empfehle ich aber :)
+    </p>
+  </div>
+</div>
+
+</div>
+++++

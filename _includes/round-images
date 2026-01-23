@@ -1,0 +1,35 @@
+{% if include.id %}
+  {% assign round_images = page[include.id] %}
+{% else %}
+  {% assign round_images = page.round-images %}
+{% endif %}
+
+<div class="round-image-container">
+{% for part in round_images %}
+
+  {% if part.size == 'full' %}
+    <div class="round-image-box round-image-box-full">
+  {% elsif part.size == 'half' %}
+    <div class="round-image-box round-image-box-half">
+  {% elsif part.size == 'third' %}
+    <div class="round-image-box round-image-box-third">
+  {% else %}
+    <div class="round-image-box round-image-box-full">
+  {% endif %}
+
+      <div class="round-image">
+        <img src="{{ part.image-path }}">
+      </div>
+
+      {% if part.header %}
+        <h3>{{ part.header }}</h3>
+      {% endif %}
+
+      {% if part.caption %}
+        <p>{{ part.caption }}</p>
+      {% endif %}
+
+    </div>
+
+{% endfor %}
+</div>

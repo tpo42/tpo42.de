@@ -1,28 +1,78 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "de" }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+---
 
-  <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<!doctype html>
+<!--
+  OneFlow Jekyll Theme 1.1 by Per Starke
+  Copyright 2024 Per Starke - https://perstarke-webdev.de/
+  Free for personal and commercial use under the MIT license
+  https://opensource.org/license/mit/
+-->
 
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<!--
+  Based on Minimal Mistakes Jekyll Theme.
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose.
+  Copyright 2013-2021 Michael Rose - mademistakes.com | @mmistakes
+  Licensed under MIT.
+-->
 
-  {% feed_meta %}
-  {% seo %}
-</head>
-<body>
-  {% include header.html %}
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-  </main>
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached masthead.html %}
 
-  {% include footer.html %}
-</body>
+
+    <style>
+
+        .bg {
+          background-image: url({{site.background-image}});
+        }
+
+        .bg::after {
+           background-color: {{site.background-image-overlay}};
+        }
+
+        {% if site.background-image-mobile %}
+
+        @media (max-width: 768px) {
+          .bg {
+            background-image: url({{site.background-image-mobile}});
+          }
+
+         {% endif %}
+
+        }
+    </style>
+
+
+    {% if site.background-image %}
+      <div class="bg">
+    {% endif %}
+
+        {% if site.show-popup %}
+        {% include popup.html %}
+        {% endif %}
+
+      <div class="initial-content">
+        {{ content }}
+      </div>
+
+      <div id="footer" class="page__footer">
+        <footer>
+          {% include footer/custom.html %}
+          {% include_cached footer.html %}
+        </footer>
+      </div>
+
+    {% if site.background-image %}
+      </div>
+    {% endif %}
+
+    {% include scripts.html %}
+
+  </body>
 </html>

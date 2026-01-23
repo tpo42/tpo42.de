@@ -1,0 +1,28 @@
+/* ==========================================================================
+   tpo42 skin
+   ========================================================================== */
+
+/* Colors */
+$background-color: #f8f9fa !default;
+$text-color: #212529 !default;
+$muted-text-color: #6c757d !default;
+$primary-color: #00B8F5 !default;
+$border-color: #dee2e6 !default;
+$footer-background-color: #343a40 !default;
+$link-color: #ffb217 !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+
+/* arc42 colors for notices */
+$notice-requirements-background: #ffb3b3 !default;
+$notice-standards-background: #ffc95c !default;
+$notice-articles-background: #e6daf2 !default;
+
+.page__footer {
+  color: #fff !important; // override
+}
+
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
