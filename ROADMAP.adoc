@@ -52,6 +52,48 @@ Früh live nehmen (auch wenn initial leer):
 * [ ] Code-Review im PR ermöglichen
 * [ ] Pipeline (GitHub Actions) validieren und verstehen
 
+=== Review: PSWD-Übernahme (0bf2331)
+
+Ergebnisse des Code-Reviews vom 2026-02-01.
+
+==== Verlorene Inhalte
+
+* [ ] `about.adoc` wiederherstellen – 293 Zeilen, komplett gelöscht ohne Ersatz +
+  Inhalt: Vision, Problemstellung, Framework-Architektur (ditaa-Diagramm) +
+  `git show a85b844:about.adoc > about.adoc`
+* [ ] `overview.adoc` verwaist – Datei noch vorhanden, aber keine Navigation führt mehr darauf +
+  Prüfen: separate Seite wiederbelebt oder Inhalt in `tpo42-framework.adoc` mergen?
+* [ ] `CNAME` (`tpo42.de`) wurde gelöscht
+
+==== Passthrough-HTML minimieren
+
+Zwei Punkte können aus den `.adoc`-Dateien ausgelagert werden:
+
+* [ ] AOS-Animationen → `_main.js` +
+  Auto-apply `data-aos` auf `.page__content h2, .notice--*, .box` +
+  Entfernt ~11 Passthrough-Paare aus allen Seiten
+* [ ] `<hr class="section-sep">` → CSS +
+  `.section-sep`-Styles auf plain `hr` in `.page__content` anwenden +
+  Dann reicht in `.adoc` ein einfaches `''''`
+
+Ein Punkt kann in `.adoc` bleiben, aber als natives AsciiDoc:
+
+* [ ] Notice-Boxen konvertieren +
+  `++++<div class="notice--*">++++` → `[.notice--primary]\n--\n...\n--`
+
+Die verbleibenden Layout-Komponenten (round-image-grid, box-container, image-text-row)
+bleiben als Passthrough – reine Struktur, kein Inhalt.
+
+==== Schreibfehler
+
+* [ ] `TPO42` → `tpo42` in Clone-URLs (`_pages/getting-started.adoc`) +
+  Betroffen: `TPO42/TPO42-templates` und `cd TPO42-templates`
+
+==== Sonstiges
+
+* [ ] `.DS_Store`-Dateien aus dem Repo entfernen +
+  Mindestens 5 Dateien in `0bf2331` eingegangen (`_includes/`, `_sass/`, `assets/`, etc.)
+
 === Optik
 
 * [ ] Optischen Punkt korrigieren (Details folgen nach PR)
